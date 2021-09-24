@@ -27,7 +27,11 @@ public class DatosProducto {
     private double precioDeCompra;
     // número de productos
     private int stock;
-    // Precio total
+
+    public DatosProducto() {  
+    }
+    
+    
 
     public String getNombre() {
         return nombre;
@@ -93,7 +97,7 @@ public class DatosProducto {
 
     public boolean borrarProducto(int ID) {
         ConexionBD conexion = new ConexionBD();
-        String sentencia = "Delete FROM inventario WHERE idProducto ='" + ID + "'";
+        String sentencia = "Delete FROM inventariodpt WHERE idProducto ='" + ID + "'";
         if (conexion.setAutocommitBD(false)) {
             if (conexion.borrarBD(sentencia)) {
                 conexion.commitBD();
@@ -112,7 +116,7 @@ public class DatosProducto {
 
     public boolean actualizarProducto() {
         ConexionBD conexion = new ConexionBD();
-        String Sentencia = "UPDATE `inventario` SET nombre='" + this.nombre + "',precioDeVenta='" + this.precioDeVenta + "',precioDeCompra='" + this.precioDeCompra
+        String Sentencia = "UPDATE `inventariodpt` SET nombre='" + this.nombre + "',precioDeVenta='" + this.precioDeVenta + "',precioDeCompra='" + this.precioDeCompra
                 + "',stock='" + this.stock + "' WHERE idProducto=" + this.ID + ";";
         if (conexion.setAutocommitBD(false)) {
             if (conexion.actualizarBD(Sentencia)) {
@@ -132,24 +136,24 @@ public class DatosProducto {
 
     public List<DatosProducto> listarProducto() throws SQLException {
         ConexionBD conexion = new ConexionBD();
-        String sentencia = "SELECT * FROM contactos ORDER BY identificacion ASC";
-        List<DatosProducto> listaContactos = new ArrayList<>();
+        String sentencia = "SELECT * FROM inventariodpt";
+        List<DatosProducto> listaProducto = new ArrayList<>();
         ResultSet rs = conexion.consultarBD(sentencia);
         while (rs.next()) {
             DatosProducto prod = new DatosProducto();
-            prod.setID(rs.getInt("Idproducto"));
+            prod.setID(rs.getInt("idProducto"));
             prod.setNombre(rs.getString("nombre"));
             prod.setPrecioDeVenta(rs.getDouble("precioDeVenta"));
             prod.setPrecioDeCompra(rs.getDouble("precioDeCompra"));
             prod.setStock(rs.getInt("stock"));
-            listaContactos.add(prod);
+            listaProducto.add(prod);
         }
-        return listaContactos;
+        return listaProducto;
     }
 
     public DatosProducto obtenerProducto(int identificacion) throws SQLException {
         ConexionBD conexion = new ConexionBD();
-        String sentencia = "SELECT * FROM contactos WHERE idProducto = '" + ID + "'";
+        String sentencia = "SELECT * FROM inventariodpt WHERE idProducto = '" + ID + "'";
         ResultSet rs = conexion.consultarBD(sentencia);
         if (rs.next()) {
             DatosProducto prod = new DatosProducto();

@@ -26,20 +26,23 @@
                 respuesta += "\"" + proceso + "\": false";
             }
             break;
+            
         case "actualizarProducto":
             System.out.println("Entro a actualizar contacto");
             int ID = Integer.parseInt(request.getParameter("idProducto"));
-            if(prod.actualizarProducto()) {
-                prod.setNombre(request.getParameter("nombre"));
-                prod.setPrecioDeVenta(Double.parseDouble(request.getParameter("precioDeVenta")));
-                prod.setPrecioDeCompra(Double.parseDouble(request.getParameter("precioDeCompra")));
-                prod.setStock(Integer.parseInt(request.getParameter("stock")));
+            prod.setID(Integer.parseInt(request.getParameter("idProducto")));
+            prod.setNombre(request.getParameter("nombre"));
+            prod.setPrecioDeVenta(Double.parseDouble(request.getParameter("precioDeVenta")));
+            prod.setPrecioDeCompra(Double.parseDouble(request.getParameter("precioDeCompra")));
+            prod.setStock(Integer.parseInt(request.getParameter("stock")));
+            if (prod.actualizarProducto()) {
                 respuesta += "\"" + proceso + "\": true";
             } else {
                 respuesta += "\"" + proceso + "\": false";
             }
 
             break;
+            
         case "borrarProducto":
             System.out.println("Entro a eliminar contacto");
             ID = Integer.parseInt(request.getParameter("idProducto"));
@@ -50,13 +53,14 @@
             }
 
             break;
+            
         case "listarProducto":
-            System.out.println("Listar Contactos");
+            System.out.println("Listar Productos");
             List<DatosProducto> listaProducto = prod.listarProducto();
             if (listaProducto.isEmpty()) {
-                respuesta += "\"" + proceso + "\": true,\"Contactos\":[]"; //genera una lista vacía en el json
+                respuesta += "\"" + proceso + "\": false,\"Productos\":[]"; //genera una lista vacía en el json
             } else {
-                respuesta += "\"" + proceso + "\": true,\"Contactos\":" + new Gson().toJson(listaProducto); //guarda la lista en el json
+                respuesta += "\"" + proceso + "\": true,\"Productos\":" + new Gson().toJson(listaProducto); //guarda la lista en el json
 
             }
 
