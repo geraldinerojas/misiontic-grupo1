@@ -1,0 +1,55 @@
+html {
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(#012A4A, #01497C);
+
+}
+
+
+header, nav, img {
+    display: inline-block;
+}
+#img_perfil {
+    float: right;
+    width: 150px;
+    padding: 15px 15px 15px 335px;
+}
+
+#logo {
+    float: left;
+    width: 150px;
+    border-radius: 0px;
+    padding: 15px 15px 15px 30px;
+}
+
+nav {
+    padding: 225px 0px 45px 350px;
+    
+}
+
+nav a {
+    text-decoration: none;
+    text-align: center;
+}
+
+nav a li {
+    display: inline;
+    text-transform: uppercase; 
+    padding: 15px;
+    margin: 40px;
+    border-radius: 70px;
+    text-decoration: none;
+    background-color: #468FAF;
+    color: white;
+    text-align: center;
+}
+
+.linea {
+    border-top: 1px solid white;
+    height: 2px;
+    max-width: 1700px;
+    padding: 0;
+    margin: 20px auto 0 auto;
+}
