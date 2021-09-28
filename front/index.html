@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <title>Bienvenido a Domicilios para todo</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>  
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  </head>
+  <body>
+  <div class="container-fluid">
+    <div class="container">
+      <h2 class="text-center" id="title">Domicilios para todo</h2>
+      <hr>
+      <div class="row">
+        <div class="col-md-5">
+          <form role="form" method="post" action="">
+            <fieldset>              
+              <p class="text-uppercase pull-center"><b>REGÍSTRATE</b></p> 
+              <div class="mb-3">
+                <label for="restaurante" class="form-label">Nombre comercial:</label>
+                <input type="text" name="restaurante" id="restaurante" class="form-control input-lg">
+              </div>
+              <div class="mb-3">
+                <label for="nit" class="form-label">NIT o Cédula del representante legal:</label>
+                <input type="text" name="nit" id="nit" class="form-control input-lg">
+              </div>
+              <div class="mb-3">
+                <label for="correo" class="form-label">Correo electrónico:</label>
+                <input type="email" name="correo" id="correo" class="form-control input-lg">
+              </div>
+              <div class="mb-3">
+                <label for="usuario" class="form-label">Usuario</label>
+                <input type="text" name="usuario" id="usuario" class="form-control input-lg">
+              </div>
+              <div class="mb-3">
+                <label for="contrasenna" class="form-label">Contraseña</label>
+                <input type="password" name="contrasenna" id="contrasenna" class="form-control input-lg">
+              </div>
+              <div class="form-check mb-2">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input">
+                  Dando click en registrarse, estás aceptando nuestras políticas.
+                </label>
+                </div>
+              <div>
+              <input type="submit" class="btn btn-md btn-primary"  value="Registrarse">
+              </div>
+            </fieldset>
+          </form>
+        </div>
+        
+        <div class="col-md-2">
+          <!-------null------>
+        </div>
+        
+        <div class="col-md-5">
+            <form role="form">
+            <fieldset>              
+              <p class="text-uppercase"><b>¿Ya tienes una cuenta? Inicia sesión</b></p> 
+              <div class="mb-3">
+                <label for="username" class="form-label">Usuario</label>
+                <input type="text" name="username" id="username" class="form-control input-lg">
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" name="password" id="password" class="form-control input-lg">
+              </div>
+              <div>
+                <input type="submit" class="btn btn-md btn-primary" value="Iniciar sesión">
+              </div>
+            </fieldset>
+        </form> 
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <footer>
+    <p class="text-center">
+      <small> Desarrollado por Grupo 1 - Misión TIC Copyright © 2021 </small>
+    </p>
+  </footer>
+  </body>
+   
+
+</html>
