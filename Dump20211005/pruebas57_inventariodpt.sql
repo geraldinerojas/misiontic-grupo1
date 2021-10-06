@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `pruebas57` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `pruebas57`;
 -- MySQL dump 10.13  Distrib 8.0.26, for Win64 (x86_64)
 --
 -- Host: localhost    Database: pruebas57
@@ -30,6 +28,7 @@ CREATE TABLE `inventariodpt` (
   `precioDeVenta` double DEFAULT NULL,
   `precioDeCompra` double DEFAULT NULL,
   `stock` int DEFAULT NULL,
+  `descuento` int DEFAULT NULL,
   PRIMARY KEY (`idProducto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -40,7 +39,7 @@ CREATE TABLE `inventariodpt` (
 
 LOCK TABLES `inventariodpt` WRITE;
 /*!40000 ALTER TABLE `inventariodpt` DISABLE KEYS */;
-INSERT INTO `inventariodpt` VALUES (1,'Camisa',70000,50000,20),(2,'Pantalon',100000,70000,50),(3,'Mocasin',70000,50000,20),(4,'Cinturon',50000,30000,50);
+INSERT INTO `inventariodpt` VALUES (1,'Arroz con pollo',18000,12000,50,0),(2,'Baby Beef',33000,22000,50,0),(3,'Ajiaco',19000,12000,50,0),(4,'Mini Ajiaco',12000,9000,50,5),(5,'Ensalada de Fruta',15000,10000,50,0),(6,'Costillas BBQ',33000,25000,50,0),(7,'Pechuga de Pollo',27000,20000,100,0),(8,'Sopa de Champiñones',13000,7000,50,0);
 /*!40000 ALTER TABLE `inventariodpt` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-24 10:55:51
+-- Dump completed on 2021-10-05 21:23:01
